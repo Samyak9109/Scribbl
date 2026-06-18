@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addStroke , clearBoard} from "../redux/slices/boardslice";
-
+import socket from "../socket/socket"
 const Canvas = () => {
   const canvasRef = useRef(null);
   const ctxRef = useRef(null);
@@ -99,6 +99,12 @@ const Canvas = () => {
     clearCanvas();
     dispatch(clearBoard());
   };
+
+  useEffect(() => {
+    socket.on("connect", () => {
+      console.log("connected:", socket.id);
+    });
+  }, []);
 
   return (
     <div>
