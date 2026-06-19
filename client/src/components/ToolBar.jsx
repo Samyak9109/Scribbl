@@ -125,9 +125,13 @@ const ToolBar = ({ roomId, onCreateRoom, onJoinRoom, onLeaveRoom }) => {
   };
 
   const handleCopyRoomId = async () => {
-    await navigator.clipboard?.writeText(roomId);
-    setIsRoomCopied(true);
-    window.setTimeout(() => setIsRoomCopied(false), 1600);
+    try {
+      await navigator.clipboard?.writeText(window.location.href);
+      setIsRoomCopied(true);
+      window.setTimeout(() => setIsRoomCopied(false), 1600);
+    } catch (err) {
+      console.error("Failed to copy URL", err);
+    }
   };
 
   const handleToolClick = (toolId) => {
