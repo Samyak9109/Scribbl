@@ -654,7 +654,7 @@ const Canvas = ({ roomId }) => {
           <Minus size={18} strokeWidth={1.8} />
         </button>
         <span
-          className={`whiteboard-zoom-label min-w-14 px-2 text-center text-sm font-semibold tabular-nums ${
+          className={`whiteboard-zoom-label px-2 py-1 text-center text-sm font-semibold tabular-nums ${
             isDark ? "text-slate-200" : "text-slate-700"
           }`}
         >

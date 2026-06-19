@@ -336,7 +336,7 @@ const ToolBar = ({ roomId, onCreateRoom, onJoinRoom, onLeaveRoom }) => {
       )}
 
       <div
-        className={`whiteboard-tool-dock fixed bottom-4 left-1/2 z-30 flex max-w-[calc(100vw-1rem)] w-[calc(100vw-1rem)] sm:w-max flex-wrap justify-center -translate-x-1/2 items-center gap-2 rounded-lg border p-2 shadow-lg backdrop-blur ${surfaceClass}`}
+        className={`whiteboard-tool-dock fixed bottom-4 left-1/2 z-30 flex w-max max-w-[calc(100vw-1rem)] flex-wrap justify-center -translate-x-1/2 items-center gap-2 rounded-lg border p-2 shadow-lg backdrop-blur ${surfaceClass}`}
       >
         <div className="flex items-center gap-1">
           {tools.map(({ id, label, Icon }) => (
