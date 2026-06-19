@@ -1,6 +1,6 @@
-# SketchRefine
+# Scribbl
 
-SketchRefine is a collaborative whiteboard built with React, Vite, Redux Toolkit,
+Scribbl is a collaborative whiteboard built with React, Vite, Redux Toolkit,
 Express, and Socket.IO. Users can join rooms, draw in real time, add shapes and
 text, switch board appearance, and export the board as an image.
 
@@ -83,6 +83,34 @@ npm run build
 cd server
 npm start
 ```
+
+## Deploying The Client To Netlify
+
+This repository includes `netlify.toml`, so Netlify can deploy the Vite client
+from the project root.
+
+When Netlify reads `netlify.toml`, it uses:
+
+```text
+Base directory: client
+Build command: npm run build
+Publish directory: dist
+Node version: 22
+```
+
+If you configure Netlify manually without `netlify.toml`, use `client/dist` as
+the publish directory from the repository root.
+
+Add this environment variable in Netlify:
+
+```bash
+VITE_SOCKET_URL=https://your-socket-server.example.com
+```
+
+The frontend can be hosted on Netlify, but the Socket.IO backend needs a
+separate long-running Node host such as Render, Railway, Fly.io, or a VPS.
+After deploying the backend, set `CLIENT_ORIGIN` on the server to your Netlify
+site URL.
 
 ## Notes
 

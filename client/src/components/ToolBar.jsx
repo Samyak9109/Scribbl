@@ -187,7 +187,7 @@ const ToolBar = ({ roomId, onCreateRoom, onJoinRoom, onLeaveRoom }) => {
             <Layers3 size={16} strokeWidth={2} />
           </div>
           <span className={`text-base font-semibold tracking-tight ${strongTextClass}`}>
-            SketchRefine
+            Scribbl
           </span>
         </div>
 
