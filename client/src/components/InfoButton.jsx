@@ -48,7 +48,7 @@ const InfoButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const panelRef = useRef(null);
   const buttonRef = useRef(null);
-  const theme = useSelector((state) => state.tool.theme);
+  const theme = useSelector((state) => state.tools.theme);
   const isDark = theme === "dark";
 
   useEffect(() => {
