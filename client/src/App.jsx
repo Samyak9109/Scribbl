@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Canvas from "./components/Canvas";
+import InfoButton from "./components/InfoButton";
 import ToolBar from "./components/ToolBar";
 
 const createRoomId = () => crypto.randomUUID();
@@ -47,6 +48,7 @@ const App = () => {
         onLeaveRoom={leaveRoom}
       />
       <Canvas key={roomId} roomId={roomId} />
+      <InfoButton />
     </div>
   );
 };
